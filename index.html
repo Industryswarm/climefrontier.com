@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clime Frontier — Australia's access vehicle to the private AI frontier</title>
+<meta name="description" content="A wholesale managed fund giving sophisticated Australian investors direct, concentrated exposure to the world's leading private AI and technology companies — managed by Clime, with an intended ASX LIC pathway.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ── Clime Brand Palette ── */
+    --reflect:   #001D34;   /* primary dark navy */
+    --action:    #EC5C3B;   /* primary CTA orange-red */
+    --pluck:     #AB6116;   /* secondary warm amber */
+    --bloom:     #F6C29A;   /* tertiary peach */
+    --flourish:  #951740;   /* dark crimson accent */
+    --swift:     #FFEFE5;   /* lightest warm cream */
+
+    /* Semantic aliases that keep layout code readable */
+    --ink:       var(--reflect);
+    --ink-2:     #0a2a44;
+    --paper:     var(--swift);
+    --paper-2:   #FDE8D5;
+    --rule:      #D9C2B3;
+    --rule-2:    #C4A895;
+    --graphite:  #4A3A2E;
+    --graphite-2:#7A6558;
+    --oxblood:   var(--action);
+    --oxblood-dk:#C44A28;
+    --steel:     var(--reflect);
+
+    /* ── Clime Brand Typography ── */
+    --f-display: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    --f-sans:    "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    --f-mono:    "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    --f-charter: "Lora", Georgia, "Times New Roman", serif;
+
+    --page-max: 1320px;
+    --page-pad: 40px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--f-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--oxblood); color: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0 var(--page-pad);
+  }
+  @media (max-width: 720px) {
+    :root { --page-pad: 24px; }
+  }
+
+  /* —————————— NAV —————————— */
+  nav.top {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: var(--reflect);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transition: background .3s, border-color .3s;
+  }
+  nav.top.scrolled {
+    background: var(--reflect);
+    backdrop-filter: none;
+    border-bottom-color: rgba(255,255,255,0.12);
+  }
+  .nav-inner {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 16px var(--page-pad);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-mark {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--swift);
+    display: flex; align-items: center; gap: 14px;
+    transition: color .3s;
+  }
+  nav.top.scrolled .nav-mark { color: var(--swift); }
+  .nav-mark .deg { color: var(--action); font-weight: 700; margin: 0 1px; position: relative; top: -0.05em; }
+  .nav-mark .by {
+    font-family: var(--f-sans);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    color: rgba(255,239,229,0.55);
+    padding: 4px 10px;
+    border: 1px solid rgba(255,239,229,0.2);
+    text-transform: uppercase;
+  }
+  nav.top.scrolled .nav-mark .by {
+    color: rgba(255,239,229,0.55);
+    border-color: rgba(255,239,229,0.2);
+  }
+  .nav-right {
+    display: flex; align-items: center; gap: 28px;
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,239,229,0.8);
+    transition: color .3s;
+  }
+  nav.top.scrolled .nav-right { color: rgba(255,239,229,0.8); }
+  .nav-right a:not(.nav-cta) { padding: 6px 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
+  .nav-right a:not(.nav-cta):hover { color: var(--swift); border-bottom-color: var(--action); }
+  nav.top.scrolled .nav-right a:not(.nav-cta):hover { color: var(--swift); }
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 22px;
+    background: var(--action);
+    color: var(--swift) !important;
+    font-family: var(--f-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    transition: background .2s, color .2s;
+    border: none !important;
+    line-height: 1;
+  }
+  nav.top.scrolled .nav-cta {
+    background: var(--action);
+    color: var(--swift) !important;
+  }
+  .nav-cta:hover {
+    background: var(--oxblood-dk) !important;
+    color: var(--swift) !important;
+  }
+  .nav-cta::after {
+    content: "→";
+    font-family: var(--f-sans);
+    font-size: 12px;
+    letter-spacing: 0;
+  }
+  @media (max-width: 1100px) {
+    .nav-right a:not(.nav-cta).hide-md { display: none; }
+  }
+  @media (max-width: 900px) {
+    .nav-right a:not(.nav-cta), .nav-mark .by { display: none; }
+  }
+
+  /* —————————— HERO —————————— */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .hero-bg .frame {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: heroFade 14s infinite;
+    filter: grayscale(15%) contrast(108%);
+  }
+  .hero-bg .frame:nth-child(1) { animation-delay: 0s; }
+  .hero-bg .frame:nth-child(2) { animation-delay: 7s; }
+
+  @keyframes heroFade {
+    0%, 40% { opacity: 0; transform: scale(1.03); }
+    10%, 36% { opacity: 0.42; }
+    50%, 100% { opacity: 0; transform: scale(1.08); }
+  }
+
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(0,29,52,0.55) 0%,
+        rgba(0,29,52,0.35) 35%,
+        rgba(0,29,52,0.65) 75%,
+        rgba(0,29,52,0.92) 100%),
+      radial-gradient(ellipse 900px 500px at 80% 20%, rgba(236,92,59,0.18), transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 100px var(--page-pad) 60px;
+    max-width: var(--page-max);
+    width: 100%;
+    margin: 0 auto;
+    gap: 60px;
+  }
+
+  .hero-meta {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    font-family: var(--f-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(247,244,237,0.65);
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta .k { color: var(--oxblood); display: block; margin-bottom: 6px; font-size: 10px; letter-spacing: 0.18em; }
+  .hero-meta .v { color: var(--paper); font-weight: 500; }
+  .hero-meta .right { text-align: right; }
+
+  .hero-body {
+    max-width: 980px;
+  }
+
+  .hero-eye {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-eye::before {
+    content: "";
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--oxblood);
+    border-radius: 50%;
+    animation: tickerPulse 2.6s ease-in-out infinite;
+  }
+
+  h1.hero-h1 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(40px, 5.6vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin: 0 0 32px;
+  }
+  h1.hero-h1 em { font-style: italic; font-weight: 300; color: rgba(255,239,229,0.75); font-family: var(--f-charter); }
+  h1.hero-h1 .deg {
+    color: var(--oxblood);
+    font-weight: 400;
+    font-size: 0.55em;
+    position: relative;
+    top: -0.35em;
+    margin: 0 0.02em;
+  }
+
+  .hero-tagline {
+    font-family: var(--f-sans);
+    font-weight: 300;
+    font-size: clamp(17px, 1.4vw, 20px);
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+    color: rgba(247,244,237,0.9);
+    max-width: 720px;
+    margin-bottom: 32px;
+  }
+
+  .hero-credibility {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(247,244,237,0.7);
+    max-width: 720px;
+    margin-bottom: 40px;
+    padding-left: 16px;
+    border-left: 2px solid var(--oxblood);
+  }
+  .hero-credibility strong { color: var(--paper); font-weight: 500; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-secondary {
+    min-width: 220px;
+    justify-content: space-between;
+  }
+
+  /* Hero ticker — rotating real stats */
+  .hero-ticker {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(247,244,237,0.55);
+    display: flex; align-items: center; gap: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-ticker .dot {
+    width: 8px; height: 8px;
+    background: var(--oxblood);
+    border-radius: 50%;
+    animation: tickerPulse 2.6s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes tickerPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+  .hero-ticker .label {
+    position: relative;
+    min-width: 320px;
+    height: 16px;
+  }
+  .hero-ticker .label span {
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    animation: tickerLabel 18s infinite;
+    white-space: nowrap;
+  }
+  .hero-ticker .label span:nth-child(1) { animation-delay: 0s; }
+  .hero-ticker .label span:nth-child(2) { animation-delay: 6s; }
+  .hero-ticker .label span:nth-child(3) { animation-delay: 12s; }
+  @keyframes tickerLabel {
+    0%, 30% { opacity: 0; }
+    3%, 30% { opacity: 1; }
+    33%, 100% { opacity: 0; }
+  }
+  .hero-ticker .label span strong {
+    color: var(--paper);
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+
+  /* Hero-scoped buttons */
+  .hero .btn-primary {
+    background: var(--action);
+    color: var(--swift);
+    border-color: var(--action);
+  }
+  .hero .btn-primary:hover {
+    background: var(--oxblood-dk);
+    border-color: var(--oxblood-dk);
+    color: var(--swift);
+  }
+  .hero .btn-secondary {
+    background: transparent;
+    color: var(--swift);
+    border-color: rgba(255,239,229,0.5);
+  }
+  .hero .btn-secondary:hover {
+    background: var(--swift);
+    color: var(--ink);
+    border-color: var(--swift);
+  }
+
+  .btn-primary {
+    display: inline-flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px;
+    background: var(--action);
+    color: var(--swift);
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background .2s, color .2s;
+    border: 2px solid var(--action);
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--oxblood-dk); border-color: var(--oxblood-dk); color: var(--swift); }
+  .btn-primary::after {
+    content: "→";
+    font-family: var(--f-sans);
+    font-size: 14px;
+    letter-spacing: 0;
+    transition: transform .25s;
+    margin-left: 10px;
+  }
+  .btn-primary:hover::after { transform: translateX(3px); }
+  .btn-secondary {
+    display: inline-flex; justify-content: space-between; align-items: center;
+    padding: 14px 24px;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all .2s;
+    border: 2px solid var(--ink);
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--swift); }
+  .btn-secondary::after {
+    content: "↓";
+    font-family: var(--f-sans);
+    font-size: 14px;
+    letter-spacing: 0;
+    margin-left: 10px;
+  }
+
+  /* —————————— SECTION scaffolding —————————— */
+  section.sec {
+    padding: 130px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  section.sec:last-of-type { border-bottom: none; }
+
+  section.sec-dark {
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  section.sec-dark::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 1000px 500px at 85% 20%, rgba(236,92,59,0.12), transparent 65%);
+    pointer-events: none;
+  }
+  section.sec-dark .wrap { position: relative; z-index: 1; }
+  section.sec-dark .sec-head {
+    border-bottom-color: rgba(247, 244, 237, 0.25);
+  }
+  section.sec-dark .sec-label { color: var(--paper); }
+  section.sec-dark h2.sec-h { color: var(--paper); }
+  section.sec-dark h2.sec-h em { color: rgba(247, 244, 237, 0.5); }
+  section.sec-dark .sec-lede { color: rgba(247, 244, 237, 0.85); }
+
+  .sec-head {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+    align-items: flex-end;
+    margin-bottom: 72px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--ink);
+  }
+  @media (max-width: 900px) {
+    .sec-head { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .sec-n {
+    font-family: var(--f-sans);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.20em;
+    color: var(--action);
+    margin-bottom: 8px;
+  }
+  .sec-label {
+    font-family: var(--f-display);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.10em;
+    color: var(--ink);
+  }
+  h2.sec-h {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(34px, 4.2vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  h2.sec-h em { font-style: italic; font-weight: 300; color: var(--ink); font-family: var(--f-charter); }
+  .sec-lede {
+    font-family: var(--f-sans);
+    font-weight: 300;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.45;
+    color: var(--ink-2);
+    max-width: 760px;
+    letter-spacing: -0.005em;
+  }
+
+  /* —————————— THESIS / WHY NOW —————————— */
+  .thesis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) { .thesis-grid { grid-template-columns: 1fr; } }
+  .thesis-card {
+    background: var(--paper);
+    padding: 44px 36px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .thesis-card .eye {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--oxblood);
+    margin-bottom: 24px;
+  }
+  .thesis-card h3 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .thesis-card .stat-row {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(36px, 3vw, 48px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .thesis-card .stat-row .unit {
+    color: var(--graphite);
+    font-weight: 300;
+    font-size: 0.55em;
+  }
+  .thesis-card .body {
+    font-family: var(--f-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin-bottom: auto;
+  }
+  .thesis-card .src {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+
+  /* Value-shift band — public vs private value capture */
+  .value-shift {
+    margin-top: 56px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    padding: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .value-shift { grid-template-columns: 1fr; padding: 36px 28px; gap: 32px; }
+  }
+  .vs-text .vs-eye {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 16px;
+  }
+  .vs-text h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(24px, 2.4vw, 34px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .vs-text p {
+    font-family: var(--f-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin-bottom: 12px;
+  }
+  .vs-text .src {
+    margin-top: 16px;
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+  .vs-chart {
+    width: 100%;
+    height: auto;
+  }
+  .vs-chart svg { width: 100%; height: auto; display: block; }
+
+  /* —————————— ACCESS GAP —————————— */
+  .access-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 16px;
+  }
+  @media (max-width: 720px) { .access-grid { grid-template-columns: 1fr; } }
+  .access-card {
+    background: var(--paper);
+    padding: 40px 36px;
+  }
+  .access-card .eye {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--oxblood);
+    margin-bottom: 16px;
+  }
+  .access-card h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .access-card p {
+    font-family: var(--f-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  /* —————————— PORTFOLIO —————————— */
+  .portfolio-overline {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+    padding: 32px 0 20px;
+    border-bottom: 1px solid var(--rule);
+    margin-top: 24px;
+  }
+  .portfolio-overline .po-eye {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+  }
+  .portfolio-overline .po-sub {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+
+  /* Pillar groupings */
+  .pillar {
+    margin-top: 48px;
+  }
+  .pillar:first-of-type { margin-top: 32px; }
+  .pillar-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 1px;
+  }
+  .pillar-num {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-right: 12px;
+  }
+  .pillar-name {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .pillar-desc {
+    font-family: var(--f-sans);
+    font-size: 13px;
+    color: var(--graphite);
+    max-width: 640px;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .portfolio-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .portfolio-grid.cols-5 { grid-template-columns: repeat(5, 1fr); }
+  @media (max-width: 900px) {
+    .portfolio-grid,
+    .portfolio-grid.cols-3,
+    .portfolio-grid.cols-5 { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .portfolio-grid,
+    .portfolio-grid.cols-3,
+    .portfolio-grid.cols-5 { grid-template-columns: 1fr; }
+  }
+
+  .pc {
+    background: var(--paper);
+    padding: 32px 28px;
+    min-height: 200px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+    transition: background .25s;
+  }
+  .pc:hover { background: var(--paper-2); }
+  .pc-logo {
+    height: 44px;
+    display: flex; align-items: center;
+    margin-bottom: 18px;
+  }
+  .pc-logo svg { max-height: 36px; width: auto; display: block; }
+  .pc-logo .wordmark {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .pc-meta {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .pc-meta .pc-val {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.1;
+  }
+  .pc-meta .pc-val .unit {
+    color: var(--graphite);
+    font-weight: 300;
+    font-size: 0.7em;
+    margin-left: 2px;
+  }
+  .pc-meta .pc-sector {
+    font-family: var(--f-mono);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--graphite);
+    margin-bottom: 6px;
+  }
+  .pc-meta .pc-note {
+    font-family: var(--f-sans);
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink-2);
+  }
+
+  .selection-criteria {
+    margin-top: 40px;
+    padding: 24px 32px;
+    background: var(--reflect);
+    color: var(--swift);
+    display: flex; flex-wrap: wrap; gap: 24px 36px;
+    align-items: center; justify-content: space-between;
+  }
+  .selection-criteria .sc-label {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+  }
+  .selection-criteria .sc-list {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(247,244,237,0.85);
+    line-height: 1.7;
+  }
+  .selection-criteria .sc-list span { margin-right: 18px; }
+  .selection-criteria .sc-list span::before { content: "◦ "; color: var(--oxblood); }
+
+  .portfolio-foot {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--f-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--graphite);
+  }
+  .portfolio-foot .k { color: var(--oxblood); }
+
+  /* —————————— MANAGER —————————— */
+  .manager-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    margin-top: 16px;
+    align-items: stretch;
+  }
+  @media (max-width: 900px) {
+    .manager-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .manager-text h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .manager-text p {
+    font-family: var(--f-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-2);
+    margin-bottom: 16px;
+  }
+  .manager-text p:last-child { margin-bottom: 0; }
+  .manager-text strong { color: var(--ink); font-weight: 500; }
+
+  .manager-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    align-self: start;
+  }
+  .ms-card {
+    background: var(--paper);
+    padding: 28px 24px;
+  }
+  .ms-card .ms-stat {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(36px, 3.4vw, 48px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .ms-card .ms-stat .unit {
+    color: var(--graphite);
+    font-weight: 300;
+    font-size: 0.55em;
+    margin-left: 2px;
+  }
+  .ms-card .ms-label {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+
+  .ic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  @media (max-width: 900px) { .ic-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .ic-grid { grid-template-columns: 1fr; } }
+  .ic-card {
+    background: var(--paper);
+    padding: 32px 28px;
+    min-height: 240px;
+  }
+  .ic-card .ic-role {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 14px;
+  }
+  .ic-card .ic-name {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  .ic-card .ic-title {
+    font-family: var(--f-sans);
+    font-size: 13px;
+    color: var(--graphite);
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ic-card .ic-bio {
+    font-family: var(--f-sans);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  /* —————————— STRUCTURE / TERMS —————————— */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) {
+    .terms-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .terms-grid { grid-template-columns: 1fr; }
+  }
+  .tc {
+    padding: 30px 28px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .tc:nth-child(4n) { border-right: none; }
+  .tc:nth-last-child(-n+4) { border-bottom: none; }
+  @media (max-width: 900px) {
+    .tc { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .tc:nth-child(4n) { border-right: 1px solid var(--rule); }
+    .tc:nth-child(2n) { border-right: none; }
+    .tc:nth-last-child(-n+4) { border-bottom: 1px solid var(--rule); }
+    .tc:nth-last-child(-n+2) { border-bottom: none; }
+  }
+  @media (max-width: 480px) {
+    .tc { border-right: none !important; border-bottom: 1px solid var(--rule) !important; }
+    .tc:last-child { border-bottom: none !important; }
+  }
+  .tc-k {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 12px;
+  }
+  .tc-v {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .tc-note {
+    font-family: var(--f-sans);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--graphite);
+  }
+
+  /* —————————— PATHWAY —————————— */
+  .pathway-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(247,244,237,0.18);
+    border: 1px solid rgba(247,244,237,0.18);
+    margin-top: 16px;
+  }
+  @media (max-width: 900px) { .pathway-steps { grid-template-columns: 1fr; } }
+  .ps {
+    background: var(--ink);
+    padding: 40px 32px;
+    position: relative;
+  }
+  .ps.now { background: rgba(236,92,59,0.12); }
+  .ps-n {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 16px;
+  }
+  .ps-t {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin-bottom: 12px;
+    line-height: 1.1;
+  }
+  .ps-d {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(247,244,237,0.8);
+  }
+
+  /* LIC discount sub-thesis */
+  .lic-thesis {
+    margin-top: 56px;
+    padding: 48px;
+    border: 1px solid rgba(247,244,237,0.25);
+    background: rgba(247,244,237,0.04);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 900px) {
+    .lic-thesis { grid-template-columns: 1fr; gap: 24px; padding: 32px 28px; }
+  }
+  .lic-thesis .lt-eye {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+  }
+  .lic-thesis .lt-eye-sub {
+    font-family: var(--f-display);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-top: 6px;
+  }
+  .lic-thesis h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(22px, 2vw, 30px);
+    letter-spacing: -0.018em;
+    color: var(--paper);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+  .lic-thesis p {
+    font-family: var(--f-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(247,244,237,0.82);
+    margin-bottom: 12px;
+  }
+  .lic-thesis p:last-child { margin-bottom: 0; }
+  .lic-thesis strong { color: var(--paper); font-weight: 500; }
+
+  /* —————————— RISK —————————— */
+  .risk-table {
+    margin-top: 16px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .risk-row {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1.6fr;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-row.head {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .risk-cell {
+    padding: 22px 24px;
+    border-right: 1px solid var(--rule);
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  .risk-cell:last-child { border-right: none; }
+  .risk-row.head .risk-cell {
+    border-right-color: rgba(247,244,237,0.2);
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+  }
+  .risk-cell strong {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: -0.005em;
+  }
+  @media (max-width: 720px) {
+    .risk-row { grid-template-columns: 1fr; }
+    .risk-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+    .risk-cell:last-child { border-bottom: none; }
+    .risk-row.head { display: none; }
+  }
+  .risk-foot {
+    margin-top: 24px;
+    font-family: var(--f-sans);
+    font-size: 13px;
+    color: var(--graphite);
+    line-height: 1.55;
+    max-width: 760px;
+  }
+
+  /* —————————— PROCESS —————————— */
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 16px;
+  }
+  @media (max-width: 720px) { .process-steps { grid-template-columns: 1fr; } }
+  .proc {
+    background: var(--paper);
+    padding: 36px 28px;
+    position: relative;
+  }
+  .proc-n {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 24px;
+  }
+  .proc-t {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.15;
+  }
+  .proc-d {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+
+  /* —————————— CTA —————————— */
+  .cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 130px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 1100px 600px at 20% 80%, rgba(236,92,59,0.18), transparent 65%);
+    pointer-events: none;
+  }
+  .cta .wrap { position: relative; z-index: 1; }
+  .cta-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .cta-inner { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .cta h2 {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(36px, 4.4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--paper);
+    margin-bottom: 24px;
+  }
+  .cta h2 .deg {
+    color: var(--oxblood);
+    font-weight: 400;
+    font-size: 0.55em;
+    position: relative;
+    top: -0.35em;
+  }
+  .cta-note {
+    font-family: var(--f-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(247,244,237,0.75);
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+  .cta-aux {
+    font-family: var(--f-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(247,244,237,0.55);
+    line-height: 1.8;
+  }
+  .cta-aux a { color: var(--paper); border-bottom: 1px solid var(--oxblood); padding-bottom: 1px; }
+  .cta-aux a:hover { color: var(--oxblood); }
+
+  .cta .btn-primary {
+    background: var(--action);
+    color: var(--swift);
+    border-color: var(--action);
+  }
+  .cta .btn-primary:hover {
+    background: var(--oxblood-dk);
+    color: var(--swift);
+    border-color: var(--oxblood-dk);
+  }
+  .cta .btn-secondary {
+    background: transparent;
+    color: var(--swift);
+    border-color: rgba(255,239,229,0.5);
+  }
+  .cta .btn-secondary:hover {
+    background: var(--swift);
+    color: var(--ink);
+    border-color: var(--swift);
+  }
+
+  /* CTA form */
+  .cta-form {
+    background: rgba(247,244,237,0.04);
+    border: 1px solid rgba(247,244,237,0.2);
+    padding: 36px;
+  }
+  .cta-form h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--paper);
+    margin-bottom: 8px;
+    letter-spacing: -0.015em;
+  }
+  .cta-form .form-sub {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(247,244,237,0.55);
+    margin-bottom: 24px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .form-row.single { grid-template-columns: 1fr; }
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+  .form-field {
+    display: flex; flex-direction: column;
+  }
+  .form-field label {
+    font-family: var(--f-mono);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(247,244,237,0.65);
+    margin-bottom: 6px;
+  }
+  .form-field input,
+  .form-field select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(247,244,237,0.4);
+    padding: 10px 0;
+    font-family: var(--f-sans);
+    font-size: 15px;
+    color: var(--paper);
+    transition: border-color .2s;
+  }
+  .form-field input::placeholder { color: rgba(247,244,237,0.3); }
+  .form-field input:focus,
+  .form-field select:focus {
+    outline: none;
+    border-bottom-color: var(--oxblood);
+  }
+  .form-field select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23F7F4ED' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    cursor: pointer;
+  }
+  .form-field select option { background: var(--ink); color: var(--paper); }
+  .form-submit {
+    width: 100%;
+    margin-top: 12px;
+    padding: 16px;
+    background: var(--action);
+    color: var(--swift);
+    border: 2px solid var(--action);
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, color .2s, border-color .2s;
+    display: inline-flex; justify-content: space-between; align-items: center;
+  }
+  .form-submit::after {
+    content: "→";
+    font-family: var(--f-sans);
+    transition: transform .25s;
+  }
+  .form-submit:hover {
+    background: var(--oxblood-dk);
+    color: var(--swift);
+    border-color: var(--oxblood-dk);
+  }
+  .form-submit:hover::after { transform: translateX(3px); }
+  .form-disclaimer {
+    margin-top: 16px;
+    font-family: var(--f-mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: rgba(247,244,237,0.45);
+    line-height: 1.6;
+  }
+
+  /* —————————— FOOTER —————————— */
+  footer.site {
+    background: var(--reflect);
+    color: var(--swift);
+    padding: 80px 0 32px;
+    border-top: none;
+  }
+  .foot-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid rgba(255,239,229,0.12);
+  }
+  @media (max-width: 900px) {
+    .foot-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+  }
+  @media (max-width: 480px) {
+    .foot-top { grid-template-columns: 1fr; }
+  }
+  .foot-wm {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--swift);
+    margin-bottom: 16px;
+  }
+  .foot-wm .deg { color: var(--action); font-weight: 700; }
+  .foot-lede {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,239,229,0.55);
+    max-width: 360px;
+  }
+  .foot-col h5 {
+    font-family: var(--f-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--action);
+    margin-bottom: 16px;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 2.1;
+    color: rgba(255,239,229,0.65);
+  }
+  .foot-col li a:hover { color: var(--swift); }
+
+  .disclaimer {
+    padding: 40px 0 24px;
+    font-family: var(--f-sans);
+    font-size: 11px;
+    line-height: 1.7;
+    color: rgba(255,239,229,0.38);
+    border-bottom: 1px solid rgba(255,239,229,0.10);
+  }
+  .disclaimer p { margin-bottom: 10px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
+
+  .foot-bot {
+    padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    font-family: var(--f-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: rgba(255,239,229,0.35);
+  };
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .foot-wm .deg { color: var(--oxblood); font-weight: 500; }
+  .foot-lede {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--graphite);
+    max-width: 360px;
+  }
+  .foot-col h5 {
+    font-family: var(--f-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--oxblood);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .foot-col ul { list-style: none; }
+  .foot-col li {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    line-height: 2;
+    color: var(--ink-2);
+  }
+  .foot-col li a:hover { color: var(--oxblood); }
+
+  .disclaimer {
+    padding: 40px 0 24px;
+  /* —————————— Responsive —————————— */
+  @media (max-width: 720px) {
+    .hero-inner { padding: 90px var(--page-pad) 40px; gap: 32px; }
+    .hero-eye { margin-bottom: 18px; }
+    h1.hero-h1 { font-size: clamp(32px, 9vw, 48px); }
+    .hero-tagline { font-size: 16px; margin-bottom: 24px; }
+    .hero-credibility { font-size: 13px; padding-left: 12px; margin-bottom: 28px; }
+    .hero-ctas .btn-primary,
+    .hero-ctas .btn-secondary { min-width: 0; width: 100%; }
+    .hero-ticker { font-size: 10px; letter-spacing: 0.12em; }
+    .hero-ticker .label { min-width: 200px; }
+
+    section.sec, .cta { padding: 72px 0; }
+    .sec-head { margin-bottom: 40px; padding-bottom: 20px; gap: 14px; }
+    .sec-n { margin-bottom: 4px; }
+    .sec-label { font-size: 14px; }
+    h2.sec-h { font-size: clamp(30px, 8vw, 42px); margin-bottom: 16px; }
+    .sec-lede { font-size: 16px; line-height: 1.5; }
+
+    .thesis-card { padding: 32px 24px; }
+    .thesis-card h3 { font-size: 22px; }
+    .thesis-card .stat-row { font-size: 32px; }
+
+    .vs-text h3 { font-size: 22px; }
+
+    .access-card { padding: 28px 24px; }
+
+    .portfolio-overline { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px 0 16px; margin-top: 16px; }
+    .pillar { margin-top: 36px; }
+    .pillar-name { font-size: 16px; }
+    .pc { padding: 24px 20px; min-height: auto; }
+    .pc-logo { margin-bottom: 14px; height: 36px; }
+    .pc-logo svg { max-height: 28px; }
+    .pc-logo .wordmark { font-size: 20px; }
+    .pc-meta .pc-val { font-size: 18px; }
+    .pc-meta .pc-sector { font-size: 9px; }
+    .pc-meta .pc-note { font-size: 11px; }
+    .selection-criteria { padding: 20px 24px; }
+    .selection-criteria .sc-list { font-size: 10px; }
+
+    .manager-text p { font-size: 14px; }
+    .ic-card { padding: 24px 20px; min-height: auto; }
+    .ic-card .ic-name { font-size: 18px; }
+
+    .tc { padding: 22px 20px; }
+    .tc-v { font-size: 18px; }
+
+    .ps { padding: 28px 24px; }
+    .ps-t { font-size: 20px; }
+    .ps-d { font-size: 13px; }
+
+    .lic-thesis { padding: 28px 24px; }
+    .lic-thesis h3 { font-size: 20px; }
+    .lic-thesis p { font-size: 13px; }
+
+    .risk-cell { padding: 18px 20px; font-size: 13px; }
+    .risk-cell strong { font-size: 14px; }
+
+    .proc { padding: 28px 24px; }
+    .proc-t { font-size: 20px; }
+
+    .cta h2 { font-size: clamp(34px, 9vw, 52px); }
+    .cta-note { font-size: 14px; }
+    .cta-form { padding: 28px 24px; }
+
+    footer.site { padding: 64px 0 24px; }
+    .foot-top { gap: 32px; padding-bottom: 40px; }
+    .foot-wm { font-size: 24px; }
+    .foot-lede { font-size: 13px; }
+    .disclaimer { padding: 32px 0 20px; font-size: 10px; }
+    .foot-bot { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 9px; }
+
+    .btn-primary, .btn-secondary { padding: 14px 18px; font-size: 11px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-ticker .label { min-width: 160px; font-size: 9px; }
+    h1.hero-h1 { font-size: clamp(30px, 9vw, 44px); }
+  }
+
+  /* ── Charter / Lora callout & quote style (per Brand Guidelines + live site) ── */
+  blockquote, .callout-quote, .charter-quote {
+    font-family: var(--f-charter);
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(20px, 1.8vw, 26px);
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  /* Attributed quote — matches clime.com.au "We go the extra mile..." pattern */
+  .site-quote {
+    padding: 48px 56px;
+    background: var(--reflect);
+    color: var(--swift);
+    position: relative;
+    margin-top: 56px;
+  }
+  .site-quote::before {
+    content: "\201C";
+    font-family: var(--f-charter);
+    font-size: 120px;
+    line-height: 0.7;
+    color: var(--action);
+    position: absolute;
+    top: 32px; left: 40px;
+    opacity: 0.6;
+  }
+  .site-quote .sq-text {
+    font-family: var(--f-charter);
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.35;
+    color: var(--swift);
+    padding-left: 48px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+  }
+  .site-quote .sq-text em { color: var(--action); font-style: italic; }
+  .site-quote .sq-attr {
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,239,229,0.6);
+    padding-left: 48px;
+  }
+  .site-quote .sq-attr strong { color: var(--swift); }
+  @media (max-width: 720px) {
+    .site-quote { padding: 40px 28px; }
+    .site-quote::before { font-size: 80px; left: 20px; top: 24px; }
+    .site-quote .sq-text, .site-quote .sq-attr { padding-left: 28px; }
+  }
+
+  section[id], .hero { scroll-margin-top: 72px; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero-bg .frame { animation: none; opacity: 0.42; }
+    .hero-ticker .dot, .hero-eye::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- —————————— NAV —————————— -->
+<nav class="top">
+  <div class="nav-inner">
+    <div class="nav-mark">
+      <span>Clime<span class="deg">°</span>Frontier</span>
+      <span class="by">A Clime Fund</span>
+    </div>
+    <div class="nav-right">
+      <a href="#thesis">Thesis</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#manager" class="hide-md">Manager</a>
+      <a href="#structure">Structure</a>
+      <a href="#pathway" class="hide-md">Pathway</a>
+      <a href="#invest" class="nav-cta">Request IM</a>
+    </div>
+  </div>
+</nav>
+
+<!-- —————————— HERO —————————— -->
+<header class="hero">
+
+  <div class="hero-bg">
+    <div class="frame" style="background-image: url('https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=2400&q=80&auto=format&fit=crop');"></div>
+    <div class="frame" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=2400&q=80&auto=format&fit=crop');"></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-body">
+      <h1 class="hero-h1">The world's most important companies<br>are private. <em>So is the upside.<span class="deg">°</span></em></h1>
+
+      <div class="hero-tagline">
+        Clime Frontier gives sophisticated Australian investors direct, concentrated exposure to a portfolio of the world's leading private AI and technology companies — at institutional terms — ahead of an intended ASX listing.
+      </div>
+
+      <div class="hero-credibility">
+        Managed by <strong>Clime Investment Management</strong> (ASX: CIW) — three decades on the ASX register and operator of <strong>Clime Capital Limited (ASX: CAM)</strong>, an existing listed investment company. The pathway from private fund to listed vehicle is a route Clime has already walked.
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#invest" class="btn-primary"><span>Request the IM</span></a>
+        <a href="#thesis" class="btn-secondary"><span>The thesis</span></a>
+      </div>
+    </div>
+
+    <div class="hero-ticker">
+      <span class="dot"></span>
+      <span class="label">
+        <span><strong>ANTHROPIC</strong> · $30B raised at $380B · Feb 2026</span>
+        <span><strong>SPACEX / xAI</strong> · $1.5T IPO target · 2026–27</span>
+        <span><strong>DATABRICKS</strong> · $5.4B ARR · 65% growth · FCF positive</span>
+      </span>
+    </div>
+  </div>
+</header>
+
+<!-- —————————— § 01 — WHY NOW / THESIS —————————— -->
+<section class="sec" id="thesis">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 01</div>
+        <div class="sec-label">Why Now</div>
+      </div>
+      <div>
+        <h2 class="sec-h">A once-a-generation <em>asymmetry, while it lasts.</em></h2>
+        <div class="sec-lede">The most consequential technology cohort in modern history is staying private longer, scaling faster, and is largely inaccessible to Australian capital. Three convergent forces define the window.</div>
+      </div>
+    </div>
+
+    <div class="thesis-grid reveal">
+      <div class="thesis-card">
+        <div class="eye">◦ 01 · Growth premium</div>
+        <h3>The leaders are scaling faster than any cohort before them.</h3>
+        <div class="body">
+          Anthropic grew from <strong>$1B to $30B in annualised revenue in fifteen months.</strong> OpenAI reached <strong>900 million weekly active users</strong> within three years of launching ChatGPT, adding 500 million in the final twelve months alone. Databricks is at $5.4B ARR, growing 65%, now free-cash-flow positive. These are demand-driven revenue curves compressing consumer and enterprise adoption.
+        </div>
+        <div class="src">SaaStr · TechCrunch · Anthropic · a16z State of Markets</div>
+      </div>
+
+      <div class="thesis-card">
+        <div class="eye">◦ 02 · IPO optionality</div>
+        <h3>A queue of generational listings is forming.</h3>
+        <div class="body">
+          SpaceX/xAI is targeting a <strong>$1.5T IPO in late 2026 — potentially the largest in history.</strong> OpenAI, Stripe and Databricks are all credible 2026–27 candidates. Each listing is a discrete rerating catalyst for the entire portfolio, providing distinct, market-driven liquidity events independent of fund-level decisions.
+        </div>
+        <div class="src">Sacra · CNBC · U.S. News · AlphaSense</div>
+      </div>
+
+      <div class="thesis-card">
+        <div class="eye">◦ 03 · AI structural tailwind</div>
+        <h3>This is a demand-driven cycle, not a fashion.</h3>
+        <div class="body">
+          Google reported a <strong>50× increase in token consumption in a single year.</strong> Annual AI infrastructure spend has crossed $660B+. AI companies are exiting in 7.9 years vs 9.6 for non-AI peers. Underneath sits a structural workforce shortage in advanced economies that AI is uniquely positioned to address — pricing this market as software is a category error.
+        </div>
+        <div class="src">Deloitte · a16z · Project Deep Thought thesis</div>
+      </div>
+    </div>
+
+    <!-- Value-shift band -->
+    <div class="value-shift reveal">
+      <div class="vs-text">
+        <div class="vs-eye">◦ The structural shift</div>
+        <h3>The best returns are now made <em style="font-style: normal; font-weight: 300; color: var(--graphite);">before</em> the IPO.</h3>
+        <p>Two decades ago, the median company IPO'd around its fifth birthday. Today the median is closer to fourteen years. Companies are choosing to remain private not because public markets are unavailable, but because the capital available privately is sufficient — and public scrutiny during critical developmental phases is a strategic disadvantage.</p>
+        <p>The consequence: the bulk of value creation that historically occurred in the public phase of a company's life is now being captured by private investors before listing. Investors waiting for the IPO increasingly receive a smaller share of the total return.</p>
+        <div class="src">a16z, Private Markets Are The New High-Growth Public Markets (Sep 2025)</div>
+      </div>
+      <div class="vs-chart">
+        <!-- SVG chart: public vs private value capture across IPO cohorts -->
+        <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: shift of value capture from public to private markets across IPO cohorts">
+          <!-- Frame -->
+          <rect x="0" y="0" width="560" height="360" fill="transparent"/>
+
+          <!-- Title -->
+          <text x="0" y="20" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="2" fill="#A0261F">VALUE CAPTURE BY MARKET</text>
+          <text x="0" y="40" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1" fill="#55504A">% OF TOTAL VALUE CREATION · BY IPO COHORT</text>
+
+          <!-- Y axis grid -->
+
+          <!-- Y labels -->
+          <text x="50" y="84" font-family="JetBrains Mono, monospace" font-size="9" fill="#817B72" text-anchor="end">100%</text>
+          <text x="50" y="144" font-family="JetBrains Mono, monospace" font-size="9" fill="#817B72" text-anchor="end">75%</text>
+          <text x="50" y="204" font-family="JetBrains Mono, monospace" font-size="9" fill="#817B72" text-anchor="end">50%</text>
+          <text x="50" y="264" font-family="JetBrains Mono, monospace" font-size="9" fill="#817B72" text-anchor="end">25%</text>
+          <text x="50" y="324" font-family="JetBrains Mono, monospace" font-size="9" fill="#817B72" text-anchor="end">0%</text>
+
+          <!-- Bars: public (light) on bottom, private (oxblood) on top, stacked to 100% -->
+          <!-- Apple 1980 -->
+          <rect x="80"  y="80" width="48" height="216" fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="80"  y="296" width="48" height="24"  fill="#A0261F"/>
+          <text x="104" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A" text-anchor="middle">Apple</text>
+          <text x="104" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#817B72" text-anchor="middle">1980</text>
+
+          <!-- Microsoft 1986 -->
+          <rect x="148" y="80"  width="48" height="200" fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="148" y="280" width="48" height="40"  fill="#A0261F"/>
+          <text x="172" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A" text-anchor="middle">MSFT</text>
+          <text x="172" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#817B72" text-anchor="middle">1986</text>
+
+          <!-- Amazon 1997 -->
+          <rect x="216" y="80"  width="48" height="178" fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="216" y="258" width="48" height="62"  fill="#A0261F"/>
+          <text x="240" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A" text-anchor="middle">AMZN</text>
+          <text x="240" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#817B72" text-anchor="middle">1997</text>
+
+          <!-- Google 2004 -->
+          <rect x="284" y="80"  width="48" height="160" fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="284" y="240" width="48" height="80"  fill="#A0261F"/>
+          <text x="308" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A" text-anchor="middle">GOOG</text>
+          <text x="308" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#817B72" text-anchor="middle">2004</text>
+
+          <!-- Facebook 2012 -->
+          <rect x="352" y="80"  width="48" height="132" fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="352" y="212" width="48" height="108" fill="#A0261F"/>
+          <text x="376" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A" text-anchor="middle">META</text>
+          <text x="376" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#817B72" text-anchor="middle">2012</text>
+
+          <!-- Uber 2019 -->
+          <rect x="420" y="80"  width="48" height="86"  fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="420" y="166" width="48" height="154" fill="#A0261F"/>
+          <text x="444" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A" text-anchor="middle">UBER</text>
+          <text x="444" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#817B72" text-anchor="middle">2019</text>
+
+          <!-- Recent Cohort -->
+          <rect x="488" y="80"  width="48" height="48"  fill="#EFEBE0" stroke="#D8D2C3" stroke-width="1"/>
+          <rect x="488" y="128" width="48" height="192" fill="#A0261F"/>
+          <text x="512" y="338" font-family="JetBrains Mono, monospace" font-size="9" fill="#0E0E0E" font-weight="500" text-anchor="middle">2024+</text>
+          <text x="512" y="350" font-family="JetBrains Mono, monospace" font-size="8" fill="#A0261F" text-anchor="middle">cohort</text>
+
+          <!-- Legend -->
+          <rect x="60" y="60" width="10" height="10" fill="#A0261F"/>
+          <text x="76" y="69" font-family="JetBrains Mono, monospace" font-size="9" fill="#0E0E0E">Private</text>
+          <rect x="130" y="60" width="10" height="10" fill="#EFEBE0" stroke="#D8D2C3"/>
+          <text x="146" y="69" font-family="JetBrains Mono, monospace" font-size="9" fill="#55504A">Public</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- —————————— § 02 — ACCESS GAP —————————— -->
+<section class="sec" id="access" style="background: var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 02</div>
+        <div class="sec-label">The Access Gap</div>
+      </div>
+      <div>
+        <h2 class="sec-h">Conviction must be matched <em>by access.</em></h2>
+        <div class="sec-lede">The leading private AI and technology companies are widely known. The challenge is gaining access to their equity at institutional terms, ahead of public markets. That requires relationships, capital deployment history and credibility within the US private market ecosystem.</div>
+      </div>
+    </div>
+
+    <div class="access-grid reveal">
+      <div class="access-card">
+        <div class="eye">◦ Closed primary rounds</div>
+        <h3>Top-tier AI primary rounds are oversubscribed and relationship-allocated.</h3>
+        <p>The cap tables of OpenAI, Anthropic, xAI and SpaceX are filled by a small group of US institutional investors who participate round after round. Cold capital is not invited.</p>
+      </div>
+      <div class="access-card">
+        <div class="eye">◦ Off-market secondaries</div>
+        <h3>Liquidity sits with a network of insiders, founders and employees.</h3>
+        <p>A meaningful share of available equity moves through structured secondaries, employee equity transfers and founder-led restructurings — channels that require trusted, repeated counterparty relationships to access.</p>
+      </div>
+      <div class="access-card">
+        <div class="eye">◦ Australian disadvantage</div>
+        <h3>No comparable ASX vehicle exists today.</h3>
+        <p>Australian wholesale and retail investors have had limited access to the highest-growth chapter of this generation's most consequential companies. Listed proxies are partial at best; ETFs cannot hold private equity.</p>
+      </div>
+      <div class="access-card">
+        <div class="eye">◦ Clime's edge</div>
+        <h3>An IC built specifically for this access problem.</h3>
+        <p>The Frontier IC pairs Clime's three-decade ASX-listed track record with US fintech operators (Adam Ezra, Larry Diamond) carrying live relationships into top-tier private cap tables and senior employee equity holders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- —————————— § 03 — PORTFOLIO —————————— -->
+<section class="sec" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 03</div>
+        <div class="sec-label">Portfolio</div>
+      </div>
+      <div>
+        <h2 class="sec-h">A concentrated portfolio of <em>the private AI and technology leaders.</em></h2>
+        <div class="sec-lede">A target of 10–15 high-conviction private positions across the AI value stack — frontier AI labs, specialised hardware and infrastructure, vertical AI applications, and high-growth platforms with structural AI tailwinds. Single-position cap of 20% on a long-term basis.</div>
+      </div>
+    </div>
+
+    <div class="portfolio-overline reveal">
+      <span class="po-eye">◦ Indicative target portfolio · 15 holdings</span>
+      <span class="po-sub">Semi-blind pool · final composition determined by IC at acquisition</span>
+    </div>
+
+    <!-- Single flat grid — no pillars, no valuations -->
+    <div class="portfolio-grid reveal">
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 100 32"><text x="0" y="24" font-family="Clash Display, sans-serif" font-weight="600" font-size="24" letter-spacing="-0.3" fill="#0E0E0E">OpenAI</text></svg>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Foundation Model · Consumer AI</div>
+          <div class="pc-note">Dominant generative AI platform globally; ChatGPT adopted faster than any consumer technology in history. Credible 2026–27 IPO candidate.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 40 40" style="max-height: 30px;">
+            <g fill="#0E0E0E">
+              <rect x="18.5" y="4" width="3" height="32" rx="1.5"/>
+              <rect x="18.5" y="4" width="3" height="32" rx="1.5" transform="rotate(45 20 20)"/>
+              <rect x="18.5" y="4" width="3" height="32" rx="1.5" transform="rotate(90 20 20)"/>
+              <rect x="18.5" y="4" width="3" height="32" rx="1.5" transform="rotate(135 20 20)"/>
+            </g>
+          </svg>
+          <span class="wordmark" style="margin-left: 10px;">Anthropic</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Frontier AI · Safety</div>
+          <div class="pc-note">Leader in AI safety and enterprise. $1B to $30B ARR in fifteen months.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 180 32"><text x="0" y="24" font-family="Clash Display, sans-serif" font-weight="600" font-size="24" letter-spacing="-0.3" fill="#0E0E0E">SpaceX</text><text x="110" y="24" font-family="Clash Display, sans-serif" font-weight="300" font-size="18" fill="#55504A">/ xAI</text></svg>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Aerospace · AI · Compute</div>
+          <div class="pc-note">$1.25T combined. Targeting largest IPO in history.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 40 40" style="max-height: 30px;">
+            <g fill="#0E0E0E">
+              <path d="M6 24 L20 32 L34 24 L34 20 L20 28 L6 20 Z"/>
+              <path d="M6 16 L20 24 L34 16 L34 12 L20 20 L6 12 Z"/>
+              <path d="M6 8 L20 16 L34 8 L34 4 L20 12 L6 4 Z"/>
+            </g>
+          </svg>
+          <span class="wordmark" style="margin-left: 10px;">Databricks</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Data · AI Analytics</div>
+          <div class="pc-note">$5.4B ARR growing 65% · FCF positive. Credible 2026–27 IPO candidate.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo"><span class="wordmark">Cerebras</span></div>
+        <div class="pc-meta">
+          <div class="pc-sector">AI Hardware · HPC</div>
+          <div class="pc-note">Top challenger to Nvidia for inference. Wafer-scale architecture delivers ~20× performance for LLMs.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 120 32"><text x="0" y="24" font-family="Clash Display, sans-serif" font-weight="600" font-size="22" letter-spacing="0" fill="#0E0E0E">ANDURIL</text></svg>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Defence · Autonomy</div>
+          <div class="pc-note">Contracted defence AI revenue driving rapid scaling.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo"><span class="wordmark">Figure</span></div>
+        <div class="pc-meta">
+          <div class="pc-sector">Humanoid Robotics</div>
+          <div class="pc-note">Leading humanoid robotics platform; commercial deployments with major industrial partners.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 100 32"><text x="0" y="24" font-family="Clash Display, sans-serif" font-weight="600" font-size="24" letter-spacing="-0.3" fill="#0E0E0E">stripe</text></svg>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Payments · Fintech</div>
+          <div class="pc-note">$1T+ in annual processed volume. Credible 2026–27 IPO candidate.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo">
+          <svg viewBox="0 0 120 32"><text x="0" y="24" font-family="Clash Display, sans-serif" font-weight="600" font-size="22" letter-spacing="-0.2" fill="#0E0E0E">Revolut</text></svg>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-sector">Digital Banking</div>
+          <div class="pc-note">50M+ retail customers globally; profitable; preparing for eventual public listing.</div>
+        </div>
+      </div>
+      <div class="pc">
+        <div class="pc-logo"><span class="wordmark">SSI</span></div>
+        <div class="pc-meta">
+          <div class="pc-sector">AI Safety · Research</div>
+          <div class="pc-note">Safe Superintelligence — pure research lab founded by Ilya Sutskever. High-conviction bet on elite talent.</div>
+        </div>
+      </div>
+      <div class="pc" style="border: 1px dashed var(--rule); background: transparent;">
+        <div class="pc-logo"><span class="wordmark" style="color: var(--graphite); font-size: 18px;">+ Others</span></div>
+        <div class="pc-meta">
+          <div class="pc-sector" style="color: var(--graphite-2);">Additional positions</div>
+          <div class="pc-note" style="color: var(--graphite-2);">Determined by IC at acquisition.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Selection criteria strip -->
+    <div class="selection-criteria reveal">
+      <span class="sc-label">◦ Selection criteria</span>
+      <span class="sc-list">
+        <span>$10B+ valuation</span>
+        <span>defensible moat</span>
+        <span>AI-centric or AI beneficiary</span>
+        <span>IPO candidate within 5 years</span>
+        <span>high growth</span>
+      </span>
+    </div>
+
+    <div class="portfolio-foot">
+      <span class="k">◦ </span>Indicative · subject to manager allocation, availability, and IC approval. Final composition disclosed in the Information Memorandum and at acquisition.
+    </div>
+  </div>
+</section>
+
+<!-- —————————— § 04 — MANAGER —————————— -->
+<section class="sec" id="manager">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 04</div>
+        <div class="sec-label">The Manager</div>
+      </div>
+      <div>
+        <h2 class="sec-h">Built by an Australian manager <em>that has actually walked this path.</em></h2>
+        <div class="sec-lede">For a fund whose intended liquidity event is an ASX LIC listing, the manager's prior experience operating an ASX-listed investment company is not a peripheral qualification — it is the qualification.</div>
+      </div>
+    </div>
+
+    <div class="manager-grid">
+      <div class="manager-text reveal">
+        <h3>Three decades on the ASX register. An operating LIC already on the board.</h3>
+        <p>Clime Frontier is managed by <strong>Clime Asset Management Pty Ltd</strong> (AFSL 221146), part of the <strong>Clime Investment Management Limited</strong> group (ASX: CIW) — three decades continuously listed on the ASX.</p>
+        <p>Clime is the manager of <strong>Clime Capital Limited (ASX: CAM)</strong>, a listed investment company that has operated through multiple market cycles. The regulatory relationships, listing process, governance framework and investor relations capability required to take Frontier from wholesale fund to ASX LIC exist within the firm today — not as a plan to be assembled.</p>
+        <p>Few comparable managers in Australia can offer both: a public-company operating record and an active LIC on the register. For investors backing Phase 1 with the explicit intention of converting to a listed vehicle in Phase 2, the executability of that pathway is the single most important variable. <strong>Clime is the only Australian manager applying that experience specifically to a private AI portfolio.</strong></p>
+      </div>
+
+      <div class="manager-stats reveal">
+        <div class="ms-card">
+          <div class="ms-stat">30<span class="unit">yrs</span></div>
+          <div class="ms-label">Continuously ASX-listed</div>
+        </div>
+        <div class="ms-card">
+          <div class="ms-stat">CIW</div>
+          <div class="ms-label">ASX parent code</div>
+        </div>
+        <div class="ms-card">
+          <div class="ms-stat">CAM</div>
+          <div class="ms-label">Operating ASX LIC</div>
+        </div>
+        <div class="ms-card">
+          <div class="ms-stat">221146</div>
+          <div class="ms-label">AFSL · Australia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ic-grid reveal">
+      <div class="ic-card">
+        <div class="ic-role">◦ Lead Manager</div>
+        <div class="ic-name">Michael Baragwanath</div>
+        <div class="ic-title">Managing Director, Clime Investment Management</div>
+        <div class="ic-bio">Lead manager of the Frontier strategy. Former CIO of two ESVCLPs. Pattern recognition built across venture capital, independent advisory, international markets (Australia, Dubai, Hong Kong, China) and complex project governance.</div>
+      </div>
+      <div class="ic-card">
+        <div class="ic-role">◦ Origination · IC</div>
+        <div class="ic-name">Adam Ezra</div>
+        <div class="ic-title">Australian fintech executive · US market</div>
+        <div class="ic-bio">Substantial US private market credibility built through leadership of globally significant fintech businesses. Provides Frontier with relationships into top-tier US private cap tables.</div>
+      </div>
+      <div class="ic-card">
+        <div class="ic-role">◦ Origination · IC</div>
+        <div class="ic-name">Larry Diamond</div>
+        <div class="ic-title">Founder · US AI investor network</div>
+        <div class="ic-bio">Native AI focus. Sources off-market liquidity from senior employees at top-tier AI firms holding vested equity or options. Direct line into the world's most exclusive private technology cap tables.</div>
+      </div>
+      <div class="ic-card">
+        <div class="ic-role">◦ IC Advisor</div>
+        <div class="ic-name">Nathan Germaine</div>
+        <div class="ic-title">CIO, Diamond Family Office</div>
+        <div class="ic-bio">Equities, derivatives, private credit and venture capital specialist. Level 2 Accredited Derivatives Adviser. Multi-jurisdictional structuring across AU/US markets; secondary AI markets and pre-IPO positioning.</div>
+      </div>
+    </div>
+
+    <!-- Attributed quote matching clime.com.au pattern -->
+    <div class="site-quote reveal">
+      <div class="sq-text">"The role of financial markets is to connect <em>capital</em> with <em>smart ideas</em> to create prosperity — Clime Frontier is that thesis, applied to the most important technology companies of our generation."</div>
+      <div class="sq-attr"><strong>John Abernethy</strong> · Founder &amp; Director of Investments, Clime Investment Management</div>
+    </div>
+  </div>
+</section>
+
+<!-- —————————— § 05 — STRUCTURE —————————— -->
+<section class="sec" id="structure" style="background: var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 05</div>
+        <div class="sec-label">Structure &amp; Terms</div>
+      </div>
+      <div>
+        <h2 class="sec-h">A clean, institutional structure — <em>aligned by design.</em></h2>
+        <div class="sec-lede">An Australian wholesale managed investment scheme available only to wholesale and sophisticated investors as defined under s708 of the Corporations Act. The fee structure is designed so the Manager only earns when investors do. Complete terms in the Information Memorandum.</div>
+      </div>
+    </div>
+
+    <div class="terms-grid reveal">
+      <div class="tc">
+        <div class="tc-k">Vehicle</div>
+        <div class="tc-v">Wholesale Managed Investment Scheme</div>
+        <div class="tc-note">AI Frontier class within the Clime Contributory Asset Scheme. Class assets ring-fenced.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Trustee &amp; Manager</div>
+        <div class="tc-v">Clime Asset Management</div>
+        <div class="tc-note">AFSL 221146 · part of the Clime Investment Management group (ASX: CIW).</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Eligibility</div>
+        <div class="tc-v">Wholesale · s708</div>
+        <div class="tc-note">Qualified accountant certificate required.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Minimum investment</div>
+        <div class="tc-v">A$500,000</div>
+        <div class="tc-note">Trustee may accept lower for qualifying wholesale investors.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Minimum raise</div>
+        <div class="tc-v">A$20m</div>
+        <div class="tc-note">Capital returned to investors if minimum raise is not achieved.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Target holdings</div>
+        <div class="tc-v">10–15 positions</div>
+        <div class="tc-note">Concentrated · 20% single-position cap (long-term).</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Liquidity</div>
+        <div class="tc-v">Earlier of listing or 5 years</div>
+        <div class="tc-note">No guaranteed redemptions. ASX listing is the intended liquidity event.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-k">Currency</div>
+        <div class="tc-v">AUD · USD exposure</div>
+        <div class="tc-note">Predominantly USD-denominated investee companies. Hedging at IC discretion.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- —————————— § 06 — PATHWAY —————————— -->
+<section class="sec sec-dark" id="pathway">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 06</div>
+        <div class="sec-label">ASX Pathway</div>
+      </div>
+      <div>
+        <h2 class="sec-h">From wholesale fund today <em>to listed investment company tomorrow.</em></h2>
+        <div class="sec-lede">The trustee intends to seek ASX listing as a listed investment company at the appropriate time. Indicative pathway — subject to portfolio composition, market conditions and regulatory approval.</div>
+      </div>
+    </div>
+
+    <div class="pathway-steps reveal">
+      <div class="ps now">
+        <div class="ps-n">◦ Phase 1 — Now · 2026</div>
+        <div class="ps-t">Wholesale launch</div>
+        <div class="ps-d">Open to wholesale and sophisticated investors. Capital deployed progressively into priority private positions via primary rounds, verified secondaries and structured employee equity transfers — all subject to IC approval.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-n">◦ Phase 2 — At target scale</div>
+        <div class="ps-t">ASX LIC conversion</div>
+        <div class="ps-d">At appropriate portfolio scale and composition, the trustee intends to seek ASX listing as a listed investment company — converting wholesale units to listed shares so investors gain daily market liquidity. Listing is subject to ASX/ASIC approval.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-n">◦ Phase 3 — Post-listing</div>
+        <div class="ps-t">Permanent capital vehicle</div>
+        <div class="ps-d">A permanent capital structure free of redemption pressure, continuing to hold and grow the AI portfolio through investee IPOs and subsequent private positions — alongside underlying-company IPO catalysts as they occur.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- —————————— § 07 — RISKS —————————— -->
+<section class="sec" id="risks">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 07</div>
+        <div class="sec-label">Risks</div>
+      </div>
+      <div>
+        <h2 class="sec-h">Investment in this fund is suitable <em>only for some investors.</em></h2>
+        <div class="sec-lede">Frontier is suitable only for wholesale investors who understand and accept the illiquid, high-risk nature of private equity in technology, who do not require liquidity from this investment for an extended and uncertain period, and who can absorb a total loss of invested capital.</div>
+      </div>
+    </div>
+
+    <div class="risk-table reveal">
+      <div class="risk-row head">
+        <div class="risk-cell">Risk</div>
+        <div class="risk-cell">Description</div>
+        <div class="risk-cell">Manager approach</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell"><strong>Illiquidity</strong>Private equity. No secondary market.</div>
+        <div class="risk-cell">Investments are unlisted and illiquid. No liquidity event is guaranteed. Investors may not be able to exit for many years, or at all.</div>
+        <div class="risk-cell">Semi-blind pool with transaction-level disclosure. ASX LIC listing as primary intended liquidity event, supported by Clime's demonstrated LIC operating experience.</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell"><strong>Capital loss</strong>Total loss is possible.</div>
+        <div class="risk-cell">Some AI companies will not commercially succeed at a level that justifies their current private valuations.</div>
+        <div class="risk-cell">Concentrated portfolio of high-conviction names. IC approval required for every investment. IPEV-compliant valuations under auditor oversight.</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell"><strong>Currency</strong>Material USD exposure.</div>
+        <div class="risk-cell">Substantially all investee companies are USD-denominated. AUD strengthening reduces portfolio NAV.</div>
+        <div class="risk-cell">Opportunistic hedging at IC discretion, informed by Clime's macro team. Disclosed and undiversifiable.</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell"><strong>Listing</strong>Not guaranteed.</div>
+        <div class="risk-cell">Intended ASX LIC listing may not proceed, may be delayed or may list at a market price below NAV.</div>
+        <div class="risk-cell">Active LIC (CAM) demonstrating listing capability. Legal and compliance review will precede any application.</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell"><strong>Valuation</strong>Inherently imprecise.</div>
+        <div class="risk-cell">Private company valuations may not reflect realisable value. Significant revision upon a liquidity event is possible.</div>
+        <div class="risk-cell">IPEV guidelines · annual valuations · IC oversight · independent valuation where appropriate.</div>
+      </div>
+      <div class="risk-row">
+        <div class="risk-cell"><strong>Performance fee dilution</strong>Equity settlement.</div>
+        <div class="risk-cell">Performance fees paid in SPV equity will dilute investors' proportional interest upon crystallisation.</div>
+        <div class="risk-cell">Disclosed structural feature. Equity settlement preserves cash within the vehicle and aligns the Manager at the point of any liquidity event.</div>
+      </div>
+    </div>
+
+    <div class="risk-foot">A condensed summary. The full risk matrix is set out in the Information Memorandum (Section 12) and should be read in conjunction with Section 7 of the CCAS IM. Investors should take independent financial, legal and tax advice before investing.</div>
+  </div>
+</section>
+
+<!-- —————————— § 08 — PROCESS —————————— -->
+<section class="sec" id="process" style="background: var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="sec-n">§ 08</div>
+        <div class="sec-label">Process</div>
+      </div>
+      <div>
+        <h2 class="sec-h">From first contact <em>to subscribed unitholder.</em></h2>
+        <div class="sec-lede">A clear four-step path. Most wholesale investors complete the process in 2–3 weeks, depending on accountant certification turnaround.</div>
+      </div>
+    </div>
+
+    <div class="process-steps reveal">
+      <div class="proc">
+        <div class="proc-n">◦ 01 · Day 0</div>
+        <div class="proc-t">Register interest</div>
+        <div class="proc-d">Submit your details below. We respond within one business day to confirm eligibility framework and next steps.</div>
+      </div>
+      <div class="proc">
+        <div class="proc-n">◦ 02 · Day 1–7</div>
+        <div class="proc-t">Wholesale certification</div>
+        <div class="proc-d">We provide the s708 qualified accountant certificate template. Your accountant returns it; we verify and issue the IM.</div>
+      </div>
+      <div class="proc">
+        <div class="proc-n">◦ 03 · Day 7–14</div>
+        <div class="proc-t">IM review &amp; Q&amp;A</div>
+        <div class="proc-d">Read the Information Memorandum. Discovery call with the lead manager and IC member to address questions.</div>
+      </div>
+      <div class="proc">
+        <div class="proc-n">◦ 04 · Day 14+</div>
+        <div class="proc-t">Subscribe</div>
+        <div class="proc-d">Application form and subscription transfer. Capital held in Cash Fund Units earning ADI rate until IC-approved deployment.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- —————————— CTA —————————— -->
+<section class="cta" id="invest">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div>
+        <h2>Request the Information Memorandum<span class="deg">°</span></h2>
+        <div class="cta-note">Available to wholesale and sophisticated investors as defined under s708 of the Corporations Act 2001 (Cth). A certificate from your qualified accountant will be required — we'll send the template once you register.</div>
+        <div class="cta-aux">
+          ◦ Prefer to speak first? <a href="#">Book a call with the lead manager →</a><br>
+          ◦ Adviser or family office? <a href="#">Contact us about wholesale allocation →</a>
+        </div>
+      </div>
+
+      <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent = 'Submitted — we will be in touch';">
+        <h3>Register your interest</h3>
+        <div class="form-sub">◦ One business day response</div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-fname">First name</label>
+            <input id="f-fname" type="text" required>
+          </div>
+          <div class="form-field">
+            <label for="f-lname">Last name</label>
+            <input id="f-lname" type="text" required>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-field">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" required>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div class="form-field">
+            <label for="f-firm">Firm / family office (optional)</label>
+            <input id="f-firm" type="text">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-cert">Wholesale status</label>
+            <select id="f-cert" required>
+              <option value="">Select…</option>
+              <option value="certified">Already certified</option>
+              <option value="ready">Ready to certify</option>
+              <option value="adviser">Adviser / Family office</option>
+              <option value="exploring">Exploring</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-size">Indicative allocation</label>
+            <select id="f-size" required>
+              <option value="">Select…</option>
+              <option>A$500k–1m</option>
+              <option>A$1m–2.5m</option>
+              <option>A$2.5m–5m</option>
+              <option>A$5m+</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="form-submit">Request the IM</button>
+
+        <div class="form-disclaimer">By submitting you confirm you are seeking information as a wholesale or sophisticated investor as defined under s708 of the Corporations Act 2001 (Cth). Your details will be handled per our Privacy Policy.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- —————————— FOOTER —————————— -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wm">Clime<span class="deg">°</span>Frontier</div>
+        <div class="foot-lede">A wholesale managed fund for the private technology frontier. A class within the Clime Contributory Asset Scheme. Managed by Clime Asset Management Pty Ltd · AFSL 221146 · part of the Clime Investment Management Limited group (ASX: CIW). Sydney · Established 2026.</div>
+      </div>
+      <div class="foot-col">
+        <h5>Fund</h5>
+        <ul>
+          <li><a href="#thesis">Thesis</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#manager">Manager</a></li>
+          <li><a href="#structure">Structure</a></li>
+          <li><a href="#pathway">ASX Pathway</a></li>
+          <li><a href="#risks">Risks</a></li>
+          <li><a href="#invest">Request the IM</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Firm</h5>
+        <ul>
+          <li><a href="#">About Clime</a></li>
+          <li><a href="#">Clime Capital (CAM)</a></li>
+          <li><a href="#">CIW investor relations</a></li>
+          <li><a href="#">Contact the team</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Conflict management</a></li>
+          <li><a href="#">Whistleblower policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <p>Clime Frontier is an Australian wholesale managed investment scheme available only to wholesale and sophisticated investors as defined under s708 of the Corporations Act 2001 (Cth). This website does not constitute financial product advice, a recommendation, or an offer of securities. It contains general information only and does not take into account the investment objectives, financial situation, or needs of any particular person. Investors should obtain the Information Memorandum and seek independent financial, legal and tax advice before making any investment decision.</p>
+      <p>References to an intended ASX listing are statements of current intent only. They are not an offer or guarantee of any future listing. Any such listing is subject to portfolio composition, market and regulatory conditions, and ASX/ASIC approval, and may not occur. Past performance is not indicative of future performance. Investments in private technology companies carry significant risks, including total loss of capital, extended illiquidity, valuation uncertainty, and material currency risk.</p>
+      <p>Portfolio company names and logos are used for illustrative identification of indicative target holdings only. Clime Frontier is not affiliated with, endorsed by, or sponsored by any portfolio company. Valuations are sourced from the most recent primary capital raise or verified secondary transaction and are subject to change. Final portfolio composition will be determined by the Investment Committee at the time of acquisition and disclosed in the Information Memorandum and at acquisition.</p>
+    </div>
+
+    <div class="foot-bot">
+      <span>© 2026 Clime Asset Management Pty Ltd · AFSL 221146</span>
+      <span>Wholesale · s708 · Australia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Toggle nav state when scrolled past hero
+  (function() {
+    var nav = document.querySelector('nav.top');
+    var hero = document.querySelector('.hero');
+    if (!nav || !hero) return;
+    function update() {
+      var heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 80) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  })();
+
+  // Reveal on scroll
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function(el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
