@@ -1464,7 +1464,7 @@
     font-family: var(--f-sans);
     font-size: 14px;
     line-height: 1.55;
-    color: var(--graphite);
+    color: white;
     max-width: 360px;
   }
   .foot-col h5 {
@@ -1481,7 +1481,7 @@
     font-family: var(--f-sans);
     font-size: 14px;
     line-height: 2;
-    color: var(--ink-2);
+    color: white;
   }
   .foot-col li a:hover { color: var(--oxblood); }
 
@@ -2283,7 +2283,7 @@
         </div>
       </div>
 
-      <form class="cta-form" onsubmit="event.preventDefault(); this.querySelector('.form-submit').textContent = 'Submitted — we will be in touch';">
+      <form class="cta-form" onsubmit="SubmitForm();">
         <h3>Register your interest</h3>
         <div class="form-sub">◦ One business day response</div>
 
@@ -2342,6 +2342,14 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+  var SubmitForm = function(){
+    event.preventDefault();
+    document.querySelector('.form-submit').textContent = 'Submitted — we will be in touch';
+    document.querySelector('.form-submit').style.background = 'green';
+  }
+</script>
 
 <!-- —————————— FOOTER —————————— -->
 <footer class="site">
