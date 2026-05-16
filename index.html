@@ -2346,8 +2346,32 @@
 <script type="text/javascript">
   var SubmitForm = function(){
     event.preventDefault();
-    document.querySelector('.form-submit').textContent = 'Submitted — we will be in touch';
-    document.querySelector('.form-submit').style.background = 'green';
+    const data = { 
+      firstName: document.querySelector('#f-fname').value,
+      lastName: document.querySelector('#f-lname').value,
+      email: document.querySelector('#f-email').value,
+      firm: document.querySelector('#f-firm').value,
+      cert: document.querySelector('#f-cert').value,
+      size: document.querySelector('#f-size').value
+    };
+    fetch('https://industryswarm.com/api/tekva/climefrontier/form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(result => {
+      console.log('Success:', result);
+      document.querySelector('.form-submit').textContent = 'Submitted — we will be in touch';
+      document.querySelector('.form-submit').style.background = 'green';
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.querySelector('.form-submit').textContent = 'Error — Failed to submit form';
+      document.querySelector('.form-submit').style.background = 'red';
+    });
   }
 </script>
 
